@@ -2,6 +2,7 @@
 End-to-end test for the Weather Shopper app.
 
 run using "python -m pytest tests/test_e2e_weather_web.py"
+run on BS using "python -m pytest tests/test_e2e_weather_web.py --browser chrome --ver latest --os_name "OS X" --os_version Ventura --remote_flag y"
 """
 
 import os
@@ -72,9 +73,9 @@ def test_weather_shopper_e2e(test_obj):
         all_products = test_obj.get_all_products()
         cheapest, most_expensive = test_obj.get_cheapest_and_most_expensive(all_products)
         items_to_add = [cheapest, most_expensive]
-        if cheapest['index'] == most_expensive['index']:
-            items_to_add = [cheapest]
-            test_obj.write("Cheapest and most expensive are the same item — adding once")
+        # if cheapest['index'] == most_expensive['index']:
+        #     items_to_add = [cheapest]
+        #     test_obj.write("Cheapest and most expensive are the same item — adding once")
 
         
         #* 6. Add items to cart

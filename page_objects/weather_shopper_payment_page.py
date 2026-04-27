@@ -29,8 +29,8 @@ class WeatherShopper_PaymentPage(Web_App_Helper):
     @Wrapit._exceptionHandler
     @Wrapit._screenshot
     def _switch_to_stripe_iframe(self):
-        "Switch driver context into the Stripe iframe. Returns True/False."
-        result_flag = self.switch_frame(name='stripe_checkout_app', wait_time=3)
+        "Switch driver context into the Stripe iframe."
+        result_flag = self.switch_frame(name='stripe_checkout_app', wait_time=5)
         self.conditional_write(result_flag,
             positive="Switched into Stripe iframe",
             negative="Could not switch to Stripe iframe")

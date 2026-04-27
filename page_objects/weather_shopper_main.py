@@ -2,11 +2,6 @@
 Page object for the Weather Shopper main (home) page.
 URL: https://weathershopper.pythonanywhere.com/
 
-Responsibilities:
-    - Verify temperature element is visible
-    - Read current temperature value
-    - Click Buy Moisturizers / Buy Sunscreens button
-    - Switch page after navigation
 """
 import os
 import sys
@@ -72,12 +67,7 @@ class WeatherShopper_MainPage(Web_App_Helper):
             positive=f"Clicked the Buy button for: {product_type}",
             negative=f"Could not click the Buy button for: {product_type}")
 
-        # result_flag &= self.smart_wait(
-        #     self.PAGE_HEADING % product_type.title(),
-        #     wait_seconds=5)
-        # self.conditional_write(result_flag,
-        #     positive=f"Navigated to the {product_type.title()} page",
-        #     negative=f"Did not land on the {product_type.title()} page")
+        
 
         if result_flag:
             self.switch_page(product_type)

@@ -25,7 +25,9 @@ from core_helpers import Logging_Objects  # pylint: disable=import-error wrong-i
 from api_auto_generator.endpoint_name_generator import NameGenerator
 from api_auto_generator.openapi_spec_parser import OpenAPISpecParser
 
-load_dotenv()
+import os
+
+load_dotenv(dotenv_path=os.path.join(os.getcwd(), ".env"))
 
 @pytest.fixture
 def test_obj(base_url, browser, browser_version, os_version, os_name, remote_flag,              # pylint: disable=redefined-outer-name too-many-arguments too-many-locals
