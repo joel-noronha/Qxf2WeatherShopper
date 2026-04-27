@@ -13,7 +13,8 @@ debug.log
 __pycache__
 venv*
 .env*
-env_conf/
-env_remote/
 .circleci/
 .github/workflows/
+env_conf/
+env_remote/
+env_ssl_conf/
