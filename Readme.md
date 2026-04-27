@@ -15,4 +15,4 @@ The setup has four parts:
 
 ## run test
 
-1. python -m pytest tests/test_e2e_weather_web.py
+1. `python -m pytest tests/test_e2e_weather_web.py`
