@@ -29,7 +29,7 @@ jobs:
         run: mkdir -p screenshots
 
       - name: Run E2E Weather Shopper Test
-        run: python -m pytest tests/test_e2e_weather_web.py
+        run: python -m pytest tests/test_e2e_weather_web.py --browser headless-chrome
 
       - name: Upload screenshots
         if: always()
