@@ -25,15 +25,5 @@ jobs:
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: Create screenshots directory
-        run: mkdir -p screenshots
-
       - name: Run E2E Weather Shopper Test
         run: python -m pytest tests/test_e2e_weather_web.py --browser headless-chrome
-
-      - name: Upload screenshots
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshots
-          path: screenshots/
