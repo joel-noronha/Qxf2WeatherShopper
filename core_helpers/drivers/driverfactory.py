@@ -59,15 +59,16 @@ class DriverFactory(RemoteOptions, LocalOptions):
             self.print_exception(exception, remote_flag)
 
         return web_driver,session_url
+    
 
     def get_local_driver(self, browser, browser_version):
         """Run the test on local system."""
         local_driver = None
-        if browser_version == []:
+        if browser_version in [[], None, "latest", ""]:
             browser_version = None
         if browser.lower() == "ff" or browser.lower() == 'firefox':
             local_driver = self.firefox_local(browser_version)
-        elif  browser.lower() == "edge":
+        elif browser.lower() == "edge":
             local_driver = self.edge_local(browser_version)
         elif browser.lower() == "chrome":
             local_driver = self.chrome_local(browser_version)
@@ -77,8 +78,27 @@ class DriverFactory(RemoteOptions, LocalOptions):
             local_driver = self.safari_local()
         elif browser.lower() == "headless-chrome":
             local_driver = self.headless_chrome(browser_version)
-
         return local_driver
+
+    # def get_local_driver(self, browser, browser_version):
+    #     """Run the test on local system."""
+    #     local_driver = None
+    #     if browser_version == []:
+    #         browser_version = None
+    #     if browser.lower() == "ff" or browser.lower() == 'firefox':
+    #         local_driver = self.firefox_local(browser_version)
+    #     elif  browser.lower() == "edge":
+    #         local_driver = self.edge_local(browser_version)
+    #     elif browser.lower() == "chrome":
+    #         local_driver = self.chrome_local(browser_version)
+    #     elif browser.lower() == "opera":
+    #         local_driver = self.opera_local()
+    #     elif browser.lower() == "safari":
+    #         local_driver = self.safari_local()
+    #     elif browser.lower() == "headless-chrome":
+    #         local_driver = self.headless_chrome(browser_version)
+
+    #     return local_driver
 
     def get_mobile_driver(self, mobile_os_name, mobile_os_version, device_name, app_package,
                    app_activity, remote_flag, device_flag, app_name, app_path,

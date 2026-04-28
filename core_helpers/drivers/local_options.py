@@ -45,14 +45,14 @@ class LocalOptions():
     def headless_chrome(browser_version):
         """Set up headless chrome driver options and get webdriver for headless chrome."""
         options = Options()
-        options.headless = True
+        # options.headless = True
         options.browser_version = browser_version
         options.add_argument("--window-size=1920,1080")
         options.add_argument("--disable-extensions")
         options.add_argument("--proxy-server='direct://'")
         options.add_argument("--proxy-bypass-list=*")
         options.add_argument("--start-maximized")
-        options.add_argument('--headless')
+        options.add_argument('--headless=new')
         options.add_argument('--disable-gpu')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--no-sandbox')
