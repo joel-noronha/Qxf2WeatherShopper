@@ -14,7 +14,7 @@ __pycache__
 venv*
 .env*
 .circleci/
-.github/workflows/
+# .github/workflows/
 env_conf/
 env_remote/
 env_ssl_conf/
